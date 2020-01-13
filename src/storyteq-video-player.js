@@ -157,14 +157,13 @@ StoryteqVideoPlayer.prototype.round = function(value, precision) {
 }
 
 StoryteqVideoPlayer.prototype.videoEventEmitter = function(playerInstance) {
+    var connector = this;
 
     playerInstance.on('seeked', function() {
         connector.timecodes.forEach(function(element) {
             element.passed = false;
         });
-    });
-    
-    var connector = this;
+    });  
 
     setInterval(function(){
         var position = playerInstance.currentTime();
@@ -203,6 +202,7 @@ StoryteqVideoPlayer.prototype.videoEventEmitter = function(playerInstance) {
 }
 
 StoryteqVideoPlayer.prototype.analyticPostRequest = function(type, meta) {
+    var connector = this;
     if ((this.mediaData != null || (this.videoHash != null && this.videoHash != '')) && this.tracking != false) {
         var hash = this.videoHash;
         if (this.mediaData != null) {
@@ -400,12 +400,14 @@ StoryteqVideoPlayer.prototype.getUrlParameter = function(name) {
 };
 
 StoryteqVideoPlayer.prototype.setVideoUrl = function(videoUrl) {
+    var connector = this;
     if (!connector.videoUrl || connector.videoUrl === '') {
         this.videoUrl = videoUrl;
     }
 }
 
 StoryteqVideoPlayer.prototype.setPosterUrl = function(urls) {
+    var connector = this;
     if (!connector.posterUrl || connector.posterUrl === '') {
         if (urls.hasOwnProperty('gif')){
              this.posterUrl = urls.gif;
