@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JW Player demo</title>
+	<title>Storyteq Video Player</title>
 	<script type="text/javascript" src="src/storyteq-video-player.js"></script>
 </head>
 <body>
 	<div id="player">Loading the player...</div>
 	
 	<script type="text/javascript">
-		var connector = new StoryteqConnectorJwPlayer({
+		var videoPlayer = new StoryteqConnectorJwPlayer({
 			videoPlayerId : 'player',
 			videoParameterName : 'key',
 			verbose: true,
-		});
-
-		// function showDataParameters() { 
-		// 	window.firstName = connector.getParameterValueByName('text_firstname');
-		// 	console.log(firstName);
-		// }
-			
+		});			
 	</script>
 </body>
 </html>
