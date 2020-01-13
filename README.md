@@ -7,7 +7,7 @@ The analytics are visible in the Storyteq platform CRM Analytics. Please [contac
 ## Dependencies
 Loading the player into your page is fairly easy, you can include the script directly from our CDN. Make sure to include the  script in the head of your page like this:
 ```
-<script  type="text/javascript"  src="https://storage.googleapis.com/storyteq-video-player/storyteq-video-player.min.js"></script>
+<script  type="text/javascript"  src="https://storage.googleapis.com/storyteq-video-player/dist/storyteq-video-player.min.js"></script>
 ```
 Or manually import minified version of the player by downloading this repository.
 ```
