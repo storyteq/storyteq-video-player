@@ -1,0 +1,116 @@
+/*! videojs-tube - 2019-11-23
+ * Copyright (c) 2016 CodeCanyon
+ * Author by FaceTheme
+ * @version 1.1.0 support videojs-7 */
+
+.video-js .vjs-play-progress {
+  /*  #1ABC9C    #2ECC71   #3498DB       #9B59B6   #F1C40F     #F39C12  #E67E22  #D35400  #E74C3C   #ffffff*/
+  /*  TURQUOISE  #EMERALD  #PETER RIVER  AMETHYST  SUN FLOWER  ORANGE   CARROT   PUMPKIN  ALIZARIN  TUBE */
+  background-color: #ffffff;
+}
+
+.video-js {
+  font-size: 13px;
+}
+
+.video-js.vjs-fullscreen {
+  font-size: 17px;
+}
+
+.video-js .vjs-big-play-button,
+.vjs-big-play-centered .vjs-big-play-button {
+  font-size: 7em;
+  line-height: 1.34em;
+  height: 1.4em;
+  width: 1.4em;
+  color: #ffffff;
+  border: .06666em solid #ffffff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin-top: -0.7em;
+  margin-left: -0.7em;
+  top: 50%;
+  left: 50%;
+}
+
+.video-js:hover .vjs-big-play-button,
+.video-js .vjs-big-play-button:focus {
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: #73859f;
+  background-color: rgba(115, 133, 159, 0.5);
+  transition: all 0s;
+}
+
+.video-js .vjs-progress-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+}
+
+.video-js .vjs-progress-holder {
+  /*margin: 0;*/
+}
+
+.video-js .vjs-progress-control:hover .vjs-progress-holder,
+.video-js:hover .vjs-progress-holder {
+  font-size: 2em;
+}
+
+.video-js .vjs-current-time {
+  display: block;
+  padding-right: 0em;
+}
+
+.video-js .vjs-time-divider {
+  display: block;
+}
+
+.video-js .vjs-duration {
+  display: block;
+  padding-left: 0em;
+}
+
+.video-js .vjs-remaining-time {
+  margin-right: auto;
+  /*flex-grow: 1;*/
+  visibility: hidden;
+}
+
+.video-js .vjs-control-bar {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom,rgba(23,23,23,0) 0%,rgba(0,0,0,0.4) 100%);
+}
+
+.video-js .vjs-play-progress:before {
+  font-size: 1.0em;
+  top: -0.34777777777em;
+}
+
+.video-js .vjs-load-progress,
+.video-js .vjs-load-progress div {
+  background-color: rgba(255,255,255,.4);
+}
+
+.video-js .vjs-slider {
+  background-color: rgba(255,255,255,.2);
+}
+
+.video-js .vjs-play-control:before,
+.video-js .vjs-fullscreen-control:before {
+  font-size: 2.3em;
+  line-height: 1.33;
+}
+
+/*.vjs-resolution-button .vjs-resolution-button-staticlabel:before {
+  content: '\f110';
+  font-size: 1.8em;
+  line-height: 1.67;
+}*/
