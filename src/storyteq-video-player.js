@@ -71,7 +71,7 @@ StoryteqVideoPlayer.prototype.loadVideoJsCss = function(){
     var script = document.createElement('link');
     script.type = 'text/css';
     script.rel = 'stylesheet';
-    script.href = 'https://storage.googleapis.com/storyteq-video-player/video-js.min.css';
+    script.href = 'https://storage.googleapis.com/storyteq-video-player/dist/video-js.min.css';
     if (script.readyState) { // IE
         if (script.readyState === 'loaded') {
             connector.loadVideoJsTheme();
@@ -90,7 +90,7 @@ StoryteqVideoPlayer.prototype.loadVideoJsTheme = function(){
     var script = document.createElement('link');
     script.type = 'text/css';
     script.rel = 'stylesheet';
-    script.href = 'https://storage.googleapis.com/storyteq-video-player/video-js-theme.min.css';
+    script.href = 'https://storage.googleapis.com/storyteq-video-player/dist/video-js-theme.min.css';
     if (script.readyState) { // IE
         if (script.readyState === 'loaded') {
             connector.loadVideoJs();
@@ -118,7 +118,7 @@ StoryteqVideoPlayer.prototype.loadVideoJs = function(){
             connector.getVideoData();
         }
     }
-    script.src = 'https://storage.googleapis.com/storyteq-video-player/video-js.min.js';
+    script.src = 'https://storage.googleapis.com/storyteq-video-player/dist/video-js.min.js';
     document.getElementsByTagName('head')[0].appendChild(script);
 }
 
