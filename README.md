@@ -9,10 +9,6 @@ Loading the connector into your page is fairly easy, you can include the script 
 ```
 <script  type="text/javascript"  src="https://storage.googleapis.com/storyteq-video-player/storyteq-video-player.min.js"></script>
 ```
-Otherwise you can install the connector as an npm package using the following command:
-```
-npm install storyteq-video-player
-```
 Or manually import the connector by downloading this repository.
 ```
 <script  type="text/javascript"  src="dist/storyteq-video-player.min.js"></script>
