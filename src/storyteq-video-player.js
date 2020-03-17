@@ -146,6 +146,11 @@ StoryteqVideoPlayer.prototype.createVideoPlayerInstance = function(response) {
         }
         connector.createAnalyticEmbed();
     }
+    if (connector.events) {
+        for (var event in connector.events) {
+            playerInstance.on(event, connector.events[event]);
+        }
+    }
 
     // Fire off video event emitter
     this.videoEventEmitter(playerInstance);
