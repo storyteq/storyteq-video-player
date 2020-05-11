@@ -63,7 +63,7 @@ function StoryteqVideoPlayer(parameters) {
 
 // Fallback for old implementation
 function StoryteqConnectorJwPlayer(parameters) {
-    new StoryteqVideoPlayer(parameters);
+    return new StoryteqVideoPlayer(parameters);
 }
 
 StoryteqVideoPlayer.prototype.loadVideoJsCss = function(){

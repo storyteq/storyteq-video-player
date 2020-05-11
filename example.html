@@ -8,10 +8,17 @@
 	<div id="player">Loading the player...</div>
 	
 	<script type="text/javascript">
-		var videoPlayer = new StoryteqConnectorJwPlayer({
+		var videoPlayer = new StoryteqVideoPlayer({
 			videoPlayerId : 'player',
-			videoParameterName : 'key'
-		});			
+			videoParameterName : 'key',
+			dataCallbackFunction: 'logDataVariables',
+		});
+
+		// Example code for showing data variables
+		function logDataVariables(){
+			var firstName = videoPlayer.getParameterValueByName('text_firstname');
+			console.log(firstName);
+		}
 	</script>
 </body>
 </html>
