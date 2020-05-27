@@ -34,6 +34,7 @@ Not all parameters are required. Please check out the table below for the full s
 |verbose|bool|Enable console logging for the player.|no|
 |defaultUrls|object|Define fallback URL's for when no hash is provided in the URL.|no|
 |posterUrl|string|Define a poster url to override the personalised poster|no|
+|noPoster|boolean|Allow the player to not load the poster|no|
 |events|object|Define custom eventhandlers for the player by passing a key-value pair object with the event as key and the handler as the value, such as: `events: { play: () => {}}`|no|
 ## Testing
 If everything is set up correctly, you can test the player. To create a valid URL, attach the videoParameterName as a GET parameter to your base URL, then add the video's unique hash as a value. For example:

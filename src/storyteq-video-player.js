@@ -48,6 +48,10 @@ function StoryteqVideoPlayer(parameters) {
         connector.posterUrl = parameters.posterUrl;
     }
 
+    if (parameters.noPoster) {
+        connector.noPoster = parameters.noPoster;
+    }
+
     // Video event variables
     connector.delta = 20;
     connector.durationOfVideo = null;
@@ -132,7 +136,7 @@ StoryteqVideoPlayer.prototype.createVideoPlayerInstance = function(response) {
     videoElement.replaceWith(videoPlayer);
 
     var playerInstance = videojs(connector.videoPlayerId, {
-        poster: connector.posterUrl,
+        poster: (connector.noPoster ? '': connector.posterUrl),
         sources: connector.videoUrl,
         controls: true,
         autoplay: true,
