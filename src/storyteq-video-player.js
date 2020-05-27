@@ -67,7 +67,7 @@ function StoryteqVideoPlayer(parameters) {
 
 // Fallback for old implementation
 function StoryteqConnectorJwPlayer(parameters) {
-    new StoryteqVideoPlayer(parameters);
+    return new StoryteqVideoPlayer(parameters);
 }
 
 StoryteqVideoPlayer.prototype.loadVideoJsCss = function(){
@@ -133,7 +133,7 @@ StoryteqVideoPlayer.prototype.createVideoPlayerInstance = function(response) {
     var videoPlayer = document.createElement('video');
     videoPlayer.id = connector.videoPlayerId;
     videoPlayer.className = 'video-js vjs-16-9';
-    videoElement.replaceWith(videoPlayer);
+    videoElement.parentNode.replaceChild(videoPlayer, videoElement);
 
     var playerInstance = videojs(connector.videoPlayerId, {
         poster: (connector.noPoster ? '': connector.posterUrl),
