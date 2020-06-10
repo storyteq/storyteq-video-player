@@ -148,6 +148,9 @@ StoryteqVideoPlayer.prototype.createVideoPlayerInstance = function(response) {
         if (connector.verbose) {
             console.log('Video embedded');
         }
+        document.getElementById('player').addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+        });
         connector.createAnalyticEmbed();
     }
     if (connector.events) {
@@ -260,7 +263,7 @@ StoryteqVideoPlayer.prototype.getVideoData = function() {
             connector.setVideoUrl(connector.defaultUrls.video_url);
             connector.setPosterUrl(connector.defaultUrls.poster_url);
     
-            // Instantiate JW player
+            // Instantiate Video.JS player
             connector.createVideoPlayerInstance({data:{}});
         } else {
             document.getElementById(connector.videoPlayerId).innerHTML = 'No video hash has been given';
