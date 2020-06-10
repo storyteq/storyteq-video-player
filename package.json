@@ -1,6 +1,6 @@
 {
   "name": "storyteq-video-player",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A VideoJS based player connected with Storyteq API to simplify loading videos, parameter values and video analytics.",
   "main": "dist/storyteq-video-player.min.js",
   "scripts": {
