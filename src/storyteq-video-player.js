@@ -148,7 +148,7 @@ StoryteqVideoPlayer.prototype.createVideoPlayerInstance = function(response) {
         if (connector.verbose) {
             console.log('Video embedded');
         }
-        document.getElementById(videoPlayer.id).addEventListener('contextmenu', (event) => {
+        document.getElementById(videoPlayer.id).addEventListener('contextmenu', function(event) {
             event.preventDefault();
         });
         connector.createAnalyticEmbed();
