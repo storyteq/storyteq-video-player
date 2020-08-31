@@ -28,7 +28,7 @@ Not all parameters are required. Please check out the table below for the full s
 |--|--|--|--|
 |videoPlayerId|string|The id of the HTML-element where the video player should be loaded.|yes|
 |videoHash|string|The hash used to directly retrieve the video and send analytics events to.|not required if videoParameterName or mediaData is filled|
-|videoParameterName|string|The URL parameter where the hash is obtained from.|not required if videoHash or mediaData is filled|
+|videoParameterName|string|The name of the URL query parameter of the current page that contains the hash of the video. For example if your landing page is `https://example.com/landing-page?video_hash=d41d8cd98f00b204e9800998ecf8427e`, you need to provide `video_hash` as a value.|not required if videoHash or mediaData is filled|
 |mediaData|json|The full media data if already previously obtained from the API.|not required if videoHash or videoParameterName is filled|
 |dataCallbackFunction|string|The name of the function which is called after video data has been loaded from the Storyteq API. This video data can for example be used for greeting the visitor with a personal message or prefilling a form. Video data parameter keys are similar to your template parameter keys. Check the dataCallbackFunction in example.html for a working example|no|
 |verbose|bool|Enable console logging for the player.|no|
