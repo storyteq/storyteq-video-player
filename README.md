@@ -45,11 +45,11 @@ Example of a page that will play the video with the hash passed in the `video_ha
         <div id="player"></div>
     </div>
 
-    <script  type="text/javascript"  src="https://storage.googleapis.com/storyteq-video-player/dist/storyteq-video-player.min.js"></script>
+    <script type="text/javascript" src="https://storage.googleapis.com/storyteq-video-player/dist/storyteq-video-player.min.js"></script>
     <script>
         var videoPlayer = new StoryteqVideoPlayer({
-            videoPlayerId : 'player',
-            videoParameterName : 'video_hash'
+            videoPlayerId: 'player',
+            videoParameterName: 'video_hash'
         });
     </script>
 </body>
