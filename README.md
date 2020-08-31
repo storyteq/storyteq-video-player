@@ -36,6 +36,30 @@ Not all parameters are required. Please check out the table below for the full s
 |posterUrl|string|Define a poster url to override the personalised poster|no|
 |noPoster|boolean|Allow the player to not load the poster|no|
 |events|object|Define custom eventhandlers for the player by passing a key-value pair object with the event as key and the handler as the value, such as: `events: { play: () => {}}`|no|
+
+## Example
+Example of a page that will play the video with the hash passed in the `video_hash` query parameter: https://example.com/landing?video_hash=d41d8cd98f00b204e9800998ecf8427e
+```
+<!doctype html>
+
+<html>
+
+<body>
+    <div id="parent">
+        <div id="player"></div>
+    </div>
+
+    <script  type="text/javascript"  src="https://storage.googleapis.com/storyteq-video-player/dist/storyteq-video-player.min.js"></script>
+    <script>
+        var videoPlayer = new StoryteqVideoPlayer({
+            videoPlayerId : 'player',
+            videoParameterName : 'video_hash'
+        });
+    </script>
+</body>
+
+</html>
+```
 ## Testing
 If everything is set up correctly, you can test the player. To create a valid URL, attach the videoParameterName as a GET parameter to your base URL, then add the video's unique hash as a value. For example:
 ```
