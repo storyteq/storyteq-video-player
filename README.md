@@ -9,10 +9,6 @@ Loading the player into your page is fairly easy, you can include the script dir
 ```
 <script  type="text/javascript"  src="https://storage.googleapis.com/storyteq-video-player/dist/storyteq-video-player.min.js"></script>
 ```
-Or manually import minified version of the player by downloading this repository.
-```
-<script  type="text/javascript"  src="dist/storyteq-video-player.min.js"></script>
-```
 ## Usage
 After loading the script into your page, the player needs to be configured. This is done by defining values for a few parameters in the following fashion:
 
