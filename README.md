@@ -62,5 +62,7 @@ If everything is set up correctly, you can test the player. To create a valid UR
 https://example.com?key=9e0627ae3c707b451c9ac8e1408563a1
 ```
 When you visit your page, the generated video should automatically be loaded.
+
+NOTE: The hash in the example is not functional and cannot be used for testing. Please use the hash of one of the videos created in your own Storyteq account.
 ## Support
 If you run into trouble using the player, please [contact us](mailto:teq@storyteq.com).
