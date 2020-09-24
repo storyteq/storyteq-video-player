@@ -275,6 +275,20 @@ StoryteqVideoPlayer.prototype.getVideoData = function() {
         xhr.setRequestHeader('Accept', 'application/json');
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('X-Content-Type-Options', 'nosniff');
+
+        xhr.onloadend = function() {
+            if(xhr.status != 200) 
+                if (connector.defaultUrls) {
+                    connector.setVideoUrl(connector.defaultUrls.video_url);
+                    connector.setPosterUrl(connector.defaultUrls.poster_url);
+        
+                    // Instantiate Video.JS player
+                    connector.createVideoPlayerInstance({data:{}});
+                } else {
+                    var videoElement = document.getElementById(connector.videoPlayerId);
+                    videoElement.textContent = 'Your video is no longer available';
+                }
+        }
     
         xhr.onload = function(data) {
             var response = JSON.parse(xhr.response);
