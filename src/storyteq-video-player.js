@@ -52,6 +52,10 @@ function StoryteqVideoPlayer(parameters) {
         connector.noPoster = parameters.noPoster;
     }
 
+    if (parameters.autoplay !== undefined) {
+        connector.autoplay = parameters.autoplay;
+    }
+
     // Video event variables
     connector.delta = 20;
     connector.durationOfVideo = null;
@@ -136,12 +140,12 @@ StoryteqVideoPlayer.prototype.createVideoPlayerInstance = function(response) {
     videoElement.parentNode.replaceChild(videoPlayer, videoElement);
 
     var playerInstance = videojs(connector.videoPlayerId, {
-        poster: (connector.noPoster ? '': connector.posterUrl),
+        poster: (connector.noPoster ? '' : connector.posterUrl),
         sources: connector.videoUrl,
         controls: true,
-        autoplay: true,
+        autoplay: (connector.autoplay == false ? false : true),
         preload: 'auto',
-        muted: true
+        muted: (connector.autoplay == false ? false : true),
     });
 
     if (connector.videoUrl){
@@ -411,6 +415,10 @@ StoryteqVideoPlayer.prototype.createAnalyticEmbed = function() {
 }
 
 StoryteqVideoPlayer.prototype.getParameterValueByName = function(parameterName) {
+    if (!this.parameterData){
+        console.warn('Using parameter data is turned off for this template');
+        return null;
+    }
     for (var i = 0; i < this.parameterData.length; i++) {
         if (this.parameterData[i].name == parameterName) {
             return this.parameterData[i].value;

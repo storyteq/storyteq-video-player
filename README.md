@@ -31,6 +31,7 @@ Not all parameters are required. Please check out the table below for the full s
 |defaultUrls|object|Define fallback URL's for when no hash is provided in the URL.|no|
 |posterUrl|string|Define a poster url to override the personalised poster|no|
 |noPoster|boolean|Allow the player to not load the poster|no|
+|autoplay|boolean|Define autoplay (and mute) settings for the player, defaults to true|no|
 |events|object|Define custom eventhandlers for the player by passing a key-value pair object with the event as key and the handler as the value, such as: `events: { play: () => {}}`|no|
 
 ## Example
