@@ -416,7 +416,7 @@ StoryteqVideoPlayer.prototype.createAnalyticEmbed = function() {
 
 StoryteqVideoPlayer.prototype.getParameterValueByName = function(parameterName) {
     if (!this.parameterData){
-        console.warn('Using parameter data is turned off for this template');
+        console.warn('Using template parameter data is disabled for this template');
         return null;
     }
     for (var i = 0; i < this.parameterData.length; i++) {
