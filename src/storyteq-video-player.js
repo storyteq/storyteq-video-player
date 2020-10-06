@@ -136,7 +136,7 @@ StoryteqVideoPlayer.prototype.createVideoPlayerInstance = function(response) {
     var videoElement = document.getElementById(connector.videoPlayerId);
     var videoPlayer = document.createElement('video');
     videoPlayer.id = connector.videoPlayerId;
-    videoPlayer.className = 'video-js vjs-16-9';
+    videoPlayer.className = 'video-js vjs-fluid';
     videoElement.parentNode.replaceChild(videoPlayer, videoElement);
 
     var playerInstance = videojs(connector.videoPlayerId, {
