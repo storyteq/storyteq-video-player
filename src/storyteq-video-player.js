@@ -40,6 +40,16 @@ function StoryteqVideoPlayer(parameters) {
         connector.playerSetup = parameters.playerSetup;
     }
 
+    if (parameters.googleTagManager) {
+        connector.googleTagManager = parameters.googleTagManager;
+        if (!connector.googleTagManager.eventCategory){
+            connector.googleTagManager.eventCategory = 'Storyteq Video Player';
+        }
+        if (!connector.googleTagManager.event){
+            connector.googleTagManager.event = 'gtm.storyteq.custom_event';
+        }
+    }
+
     if (parameters.events) {
         connector.events = parameters.events;
     }
@@ -220,6 +230,7 @@ StoryteqVideoPlayer.prototype.videoEventEmitter = function(playerInstance) {
 StoryteqVideoPlayer.prototype.analyticPostRequest = function(type, meta) {
     var connector = this;
     if ((this.mediaData != null || (this.videoHash != null && this.videoHash != '')) && this.tracking != false) {
+        // Create storyteq analytic
         var hash = this.videoHash;
         if (this.mediaData != null) {
             hash = mediaData.hash;
@@ -236,11 +247,49 @@ StoryteqVideoPlayer.prototype.analyticPostRequest = function(type, meta) {
             'type': type,
             'meta': meta
         }));
+
+        // Create tag manager event
+        if (window.dataLayer && connector.googleTagManager.enable) {
+            var formatted = connector.formatAnalyticToGtmEvent(type, meta);
+            if (!formatted){
+                return;
+            }
+            window.dataLayer.push(formatted);
+            if (connector.verbose) {
+                console.log(window.dataLayer);
+            }
+        }
     } else {
         if (connector.verbose) {
             console.log('No analytics will be created since no unique hash has been provided or tracking has been disabled.');
         }
     }
+}
+
+StoryteqVideoPlayer.prototype.formatAnalyticToGtmEvent = function(type, meta) {
+    var connector = this;
+    var formatted = null;
+
+    if (type == 'view'){
+        formatted = {
+            'event' : connector.googleTagManager.event,
+            'eventCategory': connector.googleTagManager.eventCategory,
+            'eventAction': 'view percentage',
+            'eventValue' : meta.percentage                    
+        };
+    } else if (type == 'embed'){
+        formatted = {
+            'event' : connector.googleTagManager.event,
+            'eventCategory': connector.googleTagManager.eventCategory,
+            'eventAction': 'embed',
+        };
+    }
+
+    if (formatted && connector.googleTagManager.eventLabel){
+        formatted.eventLabel = connector.googleTagManager.eventLabel;
+    }
+
+    return formatted;
 }
 
 StoryteqVideoPlayer.prototype.getVideoData = function() {
