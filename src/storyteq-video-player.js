@@ -255,7 +255,9 @@ StoryteqVideoPlayer.prototype.analyticPostRequest = function(type, meta) {
                 return;
             }
             window.dataLayer.push(formatted);
-            console.log(window.dataLayer);
+            if (connector.verbose) {
+                console.log(window.dataLayer);
+            }
         }
     } else {
         if (connector.verbose) {
