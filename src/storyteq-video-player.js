@@ -48,6 +48,9 @@ function StoryteqVideoPlayer(parameters) {
         if (!connector.googleTagManager.event){
             connector.googleTagManager.event = 'gtm.storyteq.custom_event';
         }
+        if (!connector.googleTagManager.enable){
+            connector.googleTagManager.enable = false;
+        }
     }
 
     if (parameters.events) {
