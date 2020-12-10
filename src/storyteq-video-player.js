@@ -252,7 +252,7 @@ StoryteqVideoPlayer.prototype.analyticPostRequest = function(type, meta) {
         }));
 
         // Create tag manager event
-        if (window.dataLayer && connector.googleTagManager.enable) {
+        if (window.dataLayer && connector.googleTagManager && connector.googleTagManager.enable) {
             var formatted = connector.formatAnalyticToGtmEvent(type, meta);
             if (!formatted){
                 return;
