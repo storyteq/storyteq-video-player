@@ -478,6 +478,18 @@ StoryteqVideoPlayer.prototype.getParameterValueByName = function(parameterName) 
     }
 }
 
+StoryteqVideoPlayer.prototype.getParameterLabelByName = function(parameterName) {
+    if (!this.parameterData){
+        console.warn('Using template parameter data is disabled for this template');
+        return null;
+    }
+    for (var i = 0; i < this.parameterData.length; i++) {
+        if (this.parameterData[i].name == parameterName) {
+            return this.parameterData[i].label;
+        }
+    }
+}
+
 StoryteqVideoPlayer.prototype.getUrlParameter = function(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
