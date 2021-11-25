@@ -109,6 +109,22 @@
   line-height: 1.33;
 }
 
+@media only screen and (max-width: 400px) {
+
+  .video-js .vjs-time-divider {
+    padding: 0 5px !important;
+    min-width: 5px !important;
+  }
+
+  .video-js .vjs-duration {
+    margin-right: auto;
+  }
+
+  .video-js .vjs-remaining-time {
+    display: none;
+  }
+}
+
 /*.vjs-resolution-button .vjs-resolution-button-staticlabel:before {
   content: '\f110';
   font-size: 1.8em;
