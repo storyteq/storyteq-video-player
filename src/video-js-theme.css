@@ -4,8 +4,6 @@
  * @version 1.1.0 support videojs-7 */
 
 .video-js .vjs-play-progress {
-  /*  #1ABC9C    #2ECC71   #3498DB       #9B59B6   #F1C40F     #F39C12  #E67E22  #D35400  #E74C3C   #ffffff*/
-  /*  TURQUOISE  #EMERALD  #PETER RIVER  AMETHYST  SUN FLOWER  ORANGE   CARROT   PUMPKIN  ALIZARIN  TUBE */
   background-color: #ffffff;
 }
 
@@ -120,13 +118,8 @@
     margin-right: auto;
   }
 
+  .video-js .vjs-picture-in-picture-control,
   .video-js .vjs-remaining-time {
     display: none;
   }
 }
-
-/*.vjs-resolution-button .vjs-resolution-button-staticlabel:before {
-  content: '\f110';
-  font-size: 1.8em;
-  line-height: 1.67;
-}*/
